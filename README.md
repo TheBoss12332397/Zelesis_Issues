@@ -50,7 +50,7 @@ A **Python utility** is provided that triggers a UAC prompt and offers **three o
 
 ### Official python download
 
-- [Download host cleanup file](https://raw.githubusercontent.com/TheBoss12332397/Zelesis_Issues/57f707fb5058814214f9402ed77a7491526e6ddd/hosts_cleanup.py)
+- [Download host cleanup file](https://github.com/TheBoss12332397/Zelesis_Issues/releases/download/download/hosts_cleanup.py)
 
 ### Official G Hub Setup Guide
 https://github.com/zen-ham/HID_Arduino/blob/master/GHUB_exploit/readme.md
