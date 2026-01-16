@@ -17,6 +17,8 @@ Please read the relevant sections carefully to avoid setup issues, crashes, or d
   - [Anti-Cheat Notice](#anti-cheat-notice)
 - [Arduino Resources](#arduino-resources)
 - [Zelesis Installer & First-Time Setup](#zelesis-installer--first-time-setup)
+- [Moderator Trust Notice](#moderator-trust-notice)
+- [Engine File Deletion Guide](#engine-file-deletion-guide)
 
 ---
 
@@ -266,3 +268,40 @@ Once complete:
 - Zelesis Neo will launch
 - Enter your license key
 - Clipboard history: Win + V
+
+---
+
+## Moderator Trust Notice
+
+⚠️ **Important Warning** ⚠️
+
+Please do not trust any moderators other than:
+
+- **@.theboss12332397**
+- **@.yxssir**
+
+These are the only two trusted moderators with the **@Sr. Mod/Helper** role. If you are scammed by any other moderator, please note that we have warned you about this. Always verify the identity of the moderators before proceeding.
+
+For assistance, use the Windows built-in feature called **Quick Assist** to ensure secure communication.
+
+---
+
+## Engine File Deletion Guide
+
+If you encounter issues with Zelesis Neo, follow these steps to delete specific engine files:
+
+1. Open the Run dialog by pressing `Win + R`.
+2. Paste the following path and press Enter:
+   ```
+   %LOCALAPPDATA%\Programs\Zelesis Neo
+   ```
+3. Navigate to the `models` folder.
+4. Delete the following files:
+   - `universal.engine`
+   - Any other `.engine` file
+
+   **Do not delete any other files. Leave the rest untouched.**
+
+5. Relaunch Zelesis Neo.
+
+This process should resolve the issue. If the problem persists, contact support for further assistance.
