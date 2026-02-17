@@ -4,8 +4,6 @@ This repository contains guides, tools, and setup instructions related to **Zele
 
 Please read the relevant sections carefully to avoid setup issues, crashes, or delays.
 
-> **Safety notice:** This repository does not provide tooling for automated Discord webhook spam, background message flooding, or hardcoded webhook token usage. If you need webhook testing, use manual, rate-limited testing flows and keep webhook URLs private.
-
 ---
 
 ## 📚 Table of Contents
