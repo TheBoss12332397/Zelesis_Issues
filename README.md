@@ -1,307 +1,127 @@
-# Zelesis Neo & Utilities — Complete Guide
+<div align="center">
 
-This repository contains guides, tools, and setup instructions related to **Zelesis Neo**, **Zelesis AI**, and supporting utilities (including Logitech G Hub fixes and Arduino HID usage).
+# 🚀 Zelesis Neo & Utilities
+**The Complete Guide & Documentation**
 
-Please read the relevant sections carefully to avoid setup issues, crashes, or delays.
+[![Status](https://img.shields.io/badge/Status-Active-brightgreen.svg)]()
+[![Platform](https://img.shields.io/badge/Platform-Windows-blue.svg)]()
+[![Support](https://img.shields.io/badge/Support-Discord-7289da.svg)]()
+
+This repository contains official guides, tools, and setup instructions for **Zelesis Neo**, **Zelesis AI**, and supporting utilities (including Logitech G Hub fixes and Arduino HID usage). Please read the relevant sections carefully to avoid setup issues, crashes, or delays.
+
+</div>
 
 ---
 
 ## 📚 Table of Contents
-
-- [Logitech G Hub Install Fix](#logitech-g-hub-install-fix)
-- [Refund Guide — Zelesis Neo](#refund-guide--zelesis-neo)
-- [Zelesis AI — Getting Started](#zelesis-ai--getting-started)
-  - [Configs](#configs)
-  - [Models (YOLO)](#models-yolo)
-  - [Movement Methods](#movement-methods)
-  - [Anti-Cheat Notice](#anti-cheat-notice)
-- [Arduino Resources](#arduino-resources)
-- [Zelesis Installer & First-Time Setup](#zelesis-installer--first-time-setup)
-- [Moderator Trust Notice](#moderator-trust-notice)
-- [Engine File Deletion Guide](#engine-file-deletion-guide)
+1. [First-Time Setup & Installation](#1-first-time-setup--installation)
+2. [Console Remote Play (Chiaki)](#2-console-remote-play-chiaki)
+3. [Zelesis AI Configuration](#3-zelesis-ai-configuration)
+4. [Hardware Spoofing & Fixes](#4-hardware-spoofing--fixes)
+5. [Troubleshooting & Support](#5-troubleshooting--support)
 
 ---
 
-## Logitech G Hub Install Fix
+## 1. First-Time Setup & Installation
 
-This guide explains how to fix the issue where **Logitech G Hub fails to install**, most commonly caused by running PowerShell commands when not instructed to do so.
+Follow these steps carefully to ensure a clean installation.
 
-### Included Tool
-A **Python utility** is provided that triggers a UAC prompt and offers **three options**:
-
-1. Remove Logitech G Hub blocks  
-2. Restore hosts file from backup  
-3. Exit  
-
-- A backup is automatically created when **Option 1** is used  
-- **Option 2** restores that backup if needed  
-
-### Usage
-1. Run the Python file  
-2. Select the desired option  
-3. The process is fully automated  
-
-### Security Notice
-- Administrator permissions are required  
-- All code is fully reviewable  
-- No malicious code is published  
-- If unsure, inspect the file using:
-  - Notepad
-  - VS Code
-  - Notepad++
-
-### Official python download
-
-- [Download host cleanup file](https://github.com/TheBoss12332397/Zelesis_Issues/releases/download/download/hosts_cleanup.py)
-
-### Official G Hub Setup Guide
-https://github.com/zen-ham/HID_Arduino/blob/master/GHUB_exploit/readme.md
+*   **Step 1 — License Key:** Check the email used during signup (wait 1–2 minutes and check your spam folder). If delayed over 1 hour, create a support ticket.
+*   **Step 2 — Download:** Open the provided link (usually Google Drive) and allow the download to complete fully. The installer size is approximately **1.7 GB**.
+*   **Step 3 — Security Prompts:** If Windows Defender flags the installer, click **More info** $\rightarrow$ **Run anyway**.
+*   **Step 4 — Execution:** Run the installer and review the installation location. Do not spam-click.
+*   **Step 5 — Initialization:** Search for Zelesis in the Start Menu and **Run as Administrator** (this is strictly required). 
+    > ⚠️ **IMPORTANT:** Initialization may take ~10 minutes. Do NOT close Zelesis or shut down your PC during this process.
+*   **Step 6 — Activation:** Once Zelesis Neo launches, enter your license key. *(Tip: Use `Win + V` to access your clipboard history).*
 
 ---
 
-## Refund Guide — Zelesis Neo
+## 2. Console Remote Play (Chiaki)
 
-This section explains how to **correctly request a refund**.
+To achieve minimal input delay when routing console gameplay through Zelesis, use the following hardware and software stack.
 
-⚠️ Incorrect formatting may delay processing.
+### Prerequisites
+*   **2x Ethernet Cables** (One for your PC, one for your Console)
+*   **[Chiaki](https://chiaki.en.softonic.com)** (Remote Play Client)
 
----
-
-### STEP 1 — Required Details
-
-All details **must** be formatted exactly like this:
-
-Email:
-Purchase Date:
-License Key:
-
-Reason: (Optional)
-
-Example (NOT a real request):
-
-Email: borger1231@gmail.com  
-Purchase Date: 21/06/2025 - 12:31 PM  
-License Key: 4HBX7RJR7B6SLDKPK8NKBQA42CNE0  
+### Configuration Steps
+1.  **Network Setup:** Hardwire both your PC and your console directly to your router using Ethernet cables. This eliminates wireless latency.
+2.  **Chiaki Installation:** Download, install, and link Chiaki to your PS5 (refer to YouTube tutorials for initial linking).
+3.  **Display & Inputs:** Launch Chiaki on your PC to view the console output. Connect your controller to the PC and verify that your inputs are registering. 
+    > 💡 **Pro Tip:** Play your game on a separate monitor or TV utilizing the PS5's direct HDMI output, while leaving Chiaki running on the PC display for Zelesis to capture.
+4.  **Zelesis Targeting:** Open Zelesis and configure your controller settings. Ensure the Chiaki window is either perfectly centered or running in fullscreen so the AI can analyze the entire gameplay area.
+5.  **Calibration:** Manually adjust your smoothing and tracking settings within Zelesis until it tracks reliably without over-flicking. If you require absolute hardware-level lock-on, you will need to invest in a Titan 2 device.
 
 ---
 
-### STEP 2 — Ticket Message
+## 3. Zelesis AI Configuration
 
-Send the following inside a support ticket (edit with your own details):
+Read this section carefully before using Zelesis AI to avoid crashes, misconfiguration, and detection issues.
 
-https://discord.com/channels/1232617064959709224/1381153501836607610/1381156175684304996
+### Profile Configs
+Configs are **not universal**. Every setup differs based on DPI, mouse hardware, sensitivity, and movement method. 
+*   Manual tuning is strictly required; do not expect imported configs to work out-of-the-box.
+*   You must verify your movement method, as Zelesis does not auto-detect this. 
+*   **Warning:** If a config is set to **Arduino movement** and no Arduino is connected, it will fail to work.
+
+### Supported Movement Methods
+You must manually select one of the following methods:
+*   🔴 **Win32:** For titles with weak anti-cheat (e.g., Roblox). *Highly detected in mainstream games.*
+*   🟡 **Ghub:** For popular titles (Valorant, COD, etc.).
+*   🟢 **Arduino (Paid) / KMBOX_B (Paid):** Safest methods for all titles (undetected so far).
+
+### Models (YOLO)
+Custom YOLO models are supported but must follow strict indexing rules to prevent software crashes. Any square resolution is supported (640×640 is recommended).
+
+**Required Classes:**
+*   `Class 0` $\rightarrow$ Head
+*   `Class 1` $\rightarrow$ Body
+
+*(Optional classes such as weapons, dead bodies, or teammates can be set to ignore).*
+
+---
+
+## 4. Hardware Spoofing & Fixes
+
+### Arduino Resources
+For hardware-level movement spoofing, refer to the [Official Arduino HID Setup Guide](https://github.com/zen-ham/HID_Arduino/blob/master/readme.md). 
+*   **Purchase Links:** [Amazon Option 1](https://a.co/d/f6ucDzk) | [Amazon Option 2](https://www.amazon.com.au/Changor-ATmega32u4-Microcontroller-Development-Leonardo/dp/B0FPD9DK6Y) | [Alibaba](https://www.alibaba.com/product-detail/Leonardo-R3-High-Quality-Development-Board_1601564076478.html).
+
+### Logitech G Hub Install Fix
+If Logitech G Hub fails to install (usually caused by running unauthorized PowerShell commands), use our automated Python tool to clean your host files. Admin permissions are required.
+*   [Download hosts_cleanup.py](https://github.com/TheBoss12332397/Zelesis_Issues/releases/download/download/hosts_cleanup.py)
+*   [Official G Hub Setup Guide](https://github.com/zen-ham/HID_Arduino/blob/master/GHUB_exploit/readme.md)
+
+---
+
+
+---
+
+## 5. Troubleshooting & Support
+
+### Engine File Deletion Guide
+
+If Zelesis Neo is crashing or throwing errors, clearing the compiled engine files often resolves the issue.
+
+1. Press `Win + R`, paste `%LOCALAPPDATA%\Programs\Zelesis Neo`, and press Enter.
+2. Navigate to the `models` folder.
+3. Delete `universal.engine` and any other `.engine` files. **Do not delete anything else.**
+4. Relaunch Zelesis Neo.
+
+### Anti-Cheat & Moderation Notice
+
+Zelesis is undetected by most automated anti-cheats, but it **does not** protect you from manual reviews or manual bans. Playing blatantly will result in a ban.
+
+> 🛑 **Trust Notice:** Only accept support from **@.theboss12332397** and **@.yxssir**. These are the only trusted moderators with the **@Sr. Mod/Helper** role. We utilize the Windows built-in **Quick Assist** feature for secure troubleshooting.
+
+### Refund Policy
+
+Refunds are processed by Stripe and take **5–10 business days**. They are only available within **3 days of purchase**. To request one, submit a [Discord support ticket](https://www.google.com/search?q=https://discord.com/channels/1232617064959709224/1381153501836607610/1381156175684304996) with the following exact format:
 
 I would like to request a refund for Zelesis Neo.
-
-Reason (Optional): Did not meet my expectations
 
 Email: your@email.com  
 License Key: YOUR-LICENSE-KEY  
 Purchase Date: DD/MM/YYYY - Time  
+Reason (Optional): Did not meet my expectations
 
----
-
-### IMPORTANT NOTICE
-
-- Refunds are NOT instant  
-- Refunds take 5–10 business days  
-- Processing is handled by Stripe  
-- Processing speed cannot be accelerated  
-- Refunds are only available within 3 days of purchase  
-
----
-
-## Zelesis AI — Getting Started
-
-Read this section carefully before using Zelesis AI to avoid crashes, misconfiguration, and detection issues.
-
----
-
-## Configs
-
-- Configs are NOT universal  
-- Every setup differs due to:
-  - DPI
-  - Mouse hardware
-  - Sensitivity
-  - Movement method
-
-Important Notes:
-- Do NOT expect configs to work out-of-the-box  
-- Manual tuning is REQUIRED  
-
-Importing Configs:
-- Importing configs is safe  
-- You MUST verify your movement method  
-- Zelesis does NOT auto-detect movement methods  
-
-⚠️ IMPORTANT  
-If a config uses **Arduino movement** and no Arduino is connected,  
-the config WILL NOT work.
-
-You must manually select one:
-- Win32
-- Ghub
-- Arduino
-- KMBOX_B
-
----
-
-## Models (YOLO)
-
-Custom YOLO models are supported but MUST follow strict rules.
-
-Minimum Required Classes:
-- Class 0 → Head (REQUIRED)
-- Class 1 → Body (REQUIRED)
-
-Optional / Ignore Classes:
-- Class 3 & 4 → Ignore (teammates, dead bodies, etc.)
-- Additional classes are allowed
-
-Example Class Layout:
-
-class_player = 0  
-class_bot = 1  
-class_weapon = 2  
-class_outline = 3  
-class_dead_body = 4  
-class_hideout_target_human = 5  
-class_hideout_target_balls = 6  
-class_head = 7  
-class_smoke = 8  
-class_fire = 9  
-class_third_person = 10  
-
-Resolution:
-- Any square resolution is supported  
-- Recommended: 640×640  
-
-❌ Incorrect model structure WILL cause crashes.
-
-Crash Recovery:
-1. Open Zelesis AI  
-2. Keep it open  
-3. Open Task Manager  
-4. Right-click Zelesis AI  
-5. Open file location  
-6. Delete the imported model  
-
----
-
-## Movement Methods
-
-Supported:
-- Win32  
-- Ghub  
-- Arduino (Paid)  
-- KMBOX_B (Paid)  
-
-Recommended Usage:
-- Win32 → Weak anti-cheat games (e.g. Roblox)
-- Ghub → Popular titles (Valorant, COD)
-- Arduino → All titles (Undetected so far)
-- KMBOX_B → All titles (Undetected so far)
-
-⚠️ WARNING  
-Win32 is highly detected in most games.
-
----
-
-## Anti-Cheat Notice
-
-Zelesis is undetected by most anti-cheats, but does NOT protect you from:
-
-- Manual reviews  
-- Manual bans  
-
-Going blatant WILL result in a ban.  
-Only you can prevent manual bans.
-
----
-
-## Arduino Resources
-
-Purchase Links:
-- https://a.co/d/f6ucDzk
-- https://www.alibaba.com/product-detail/Leonardo-R3-High-Quality-Development-Board_1601564076478.html
-- https://www.amazon.com.au/Changor-ATmega32u4-Microcontroller-Development-Leonardo/dp/B0FPD9DK6Y
-
-Arduino HID Setup Guide:
-https://github.com/zen-ham/HID_Arduino/blob/master/readme.md
-
----
-
-## Zelesis Installer & First-Time Setup
-
-Step 1 — License Key
-- Check the email used during signup
-- Wait 1–2 minutes
-- Check spam folder
-- If delayed over 1 hour, create a support ticket
-
-Step 2 — Installer Download
-- Open the download link (usually Google Drive)
-- Wait for the download to complete fully
-
-Step 3 — Installing
-- Open the installer
-- If Windows Defender appears:
-  - Click More info
-  - Click Run anyway
-
-Step 4 — Installer Process
-- Installer size ~1.7 GB
-- Do NOT spam-click
-- Review install location carefully
-
-Step 5 — First Launch
-- Search Zelesis in Start Menu
-- Run as Administrator (REQUIRED)
-
-Setup Notes:
-- Initialization may take ~10 minutes
-- Do NOT close Zelesis
-- Do NOT shut down your PC
-
-Once complete:
-- Zelesis Neo will launch
-- Enter your license key
-- Clipboard history: Win + V
-
----
-
-## Moderator Trust Notice
-
-⚠️ **Important Warning** ⚠️
-
-Please do not trust any moderators other than:
-
-- **@.theboss12332397**
-- **@.yxssir**
-
-These are the only two trusted moderators with the **@Sr. Mod/Helper** role. If you are scammed by any other moderator, please note that we have warned you about this. Always verify the identity of the moderators before proceeding.
-
-For assistance, use the Windows built-in feature called **Quick Assist** to ensure secure communication.
-
----
-
-## Engine File Deletion Guide
-
-If you encounter issues with Zelesis Neo, follow these steps to delete specific engine files:
-
-1. Open the Run dialog by pressing `Win + R`.
-2. Paste the following path and press Enter:
-   ```
-   %LOCALAPPDATA%\Programs\Zelesis Neo
-   ```
-3. Navigate to the `models` folder.
-4. Delete the following files:
-   - `universal.engine`
-   - Any other `.engine` file
-
-   **Do not delete any other files. Leave the rest untouched.**
-
-5. Relaunch Zelesis Neo.
-
-This process should resolve the issue. If the problem persists, contact support for further assistance.
