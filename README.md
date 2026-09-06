@@ -100,7 +100,7 @@ If Logitech G Hub fails to install (usually caused by running unauthorized Power
 
 ### Engine File Deletion Guide
 
-If Zelesis Neo is crashing or throwing errors, clearing the compiled engine files often resolves the issue:
+If Zelesis Neo is crashing or throwing errors, clearing the uncompiled engine files often resolves the issue:
 
 1. Press the Run dialog by pressing `Win + R`.
 
